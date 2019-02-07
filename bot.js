@@ -93,7 +93,7 @@ client.on('message', async msg => {
     const args = msg.content.split(' ');
 	const searchString = args.slice(1).join(' ');
     
-	const url = args[1] ? args[1].replace(/<(.+)>/g, '=') : '';
+	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
 	const serverQueue = queue.get(msg.guild.id);
 
 	let command = msg.content.toLowerCase().split(" ")[0];
@@ -349,8 +349,8 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`1play | Last Music`,"http://twitch.tv/Death Shop")
+client.user.setGame(`1play | ESDream Music`,"http://twitch.tv/Death Shop")
 client.user.setStatus("dnd")
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN)
